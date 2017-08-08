@@ -17,7 +17,7 @@
           }]
         },
         controller: 'propController',
-        controllerAs: 'propCtrl'
+        controllerAs: 'ctrl'
       })
       .state('regUsers', {
         url: '/regUsers',
@@ -28,7 +28,7 @@
           }]
         },
         controller: 'userController',
-        controllerAs: 'userCtrl'
+        controllerAs: 'ctrl'
       })
     $urlRouterProvider.otherwise('/propertySale');
   };

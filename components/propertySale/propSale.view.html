@@ -21,14 +21,14 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-right search-form" role="search">
+      <!-- <form class="navbar-form navbar-right search-form" role="search">
         <input type="text" class="form-control" placeholder="Search" name="eventNameFilter" ng-model="propCtrl.eventNameFilter"/>
-      </form>
+      </form> -->
     </div>
   </div>
 </nav>
 
-<main ng-controller="propController as propCtrl">
+<main ng-controller="propController as ctrl">
   <div id="headerwrapBlue">
     <section id="bs-pricing-six" class="bs-pricing-four bg-white fix">
       <div class="container">
@@ -39,16 +39,16 @@
                 <h3 class="category">Compra Propiedades</h3>
                 <form name="frmBuyProp" autocomplete="off" novalidate>
                   <md-input-container>
-                    <label>Usuario</label>
-                    <md-select name="user" id="userList" ng-model="userCtrl.name">
-                      <md-option ng-repeat="user in userCtrl.users" value={{user.name}}>{{user.name}}</md-option>
+                    <label>Propiedad</label>
+                    <md-select name="property" id="propertyList" ng-model="propCtrl.property">
+                      <md-option ng-repeat="property in ctrl.properties" value={{property.name}}>{{property.name}}</md-option>
                     </md-select>
                   </md-input-container>
 
                   <md-input-container>
-                    <label>Propiedad</label>
-                    <md-select name="property" id="propertyList" ng-model="propCtrl.name">
-                      <md-option ng-repeat="user in propCtrl.properties" value={{property.name}}>{{property.name}}</md-option>
+                    <label>Usuario</label>
+                    <md-select name="user" id="userList" ng-model="userCtrl.user">
+                      <md-option ng-repeat="user in ctrl.users" value={{user.name}}>{{user.name}}</md-option>
                     </md-select>
                   </md-input-container>
 
