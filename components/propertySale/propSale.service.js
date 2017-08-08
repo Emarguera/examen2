@@ -215,11 +215,11 @@
       var listProp = _getProperties();
 
       listProp.push(pProperty);
-      localStorage.setItem('lsEventList', JSON.stringify(listProp));
+      localStorage.setItem('lsPropList', JSON.stringify(listProp));
     }
 
     function _getProperties() {
-      var listProp = JSON.parse(localStorage.getItem('lsEventList'));
+      var listProp = JSON.parse(localStorage.getItem('lsPropList'));
       if (listProp == null) {
         listProp = properties;
       }
@@ -244,7 +244,7 @@
           listProp[i] = pProperty;
         }
       }
-      localStorage.setItem('lsEventList', JSON.stringify(listProp));
+      localStorage.setItem('lsPropList', JSON.stringify(listProp));
     }
 
   }

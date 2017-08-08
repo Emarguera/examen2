@@ -53,11 +53,11 @@
       var listUsers = _getUsers();
 
       listUsers.push(pUser);
-      localStorage.setItem('lsEventList', JSON.stringify(listUsers));
+      localStorage.setItem('lsUserList', JSON.stringify(listUsers));
     }
 
     function _getUsers() {
-      var listUsers = JSON.parse(localStorage.getItem('lsEventList'));
+      var listUsers = JSON.parse(localStorage.getItem('lsUserList'));
       if (listUsers == null) {
         listUsers = users;
       }
@@ -82,7 +82,7 @@
           listUsers[i] = pUser;
         }
       }
-      localStorage.setItem('lsEventList', JSON.stringify(listUsers));
+      localStorage.setItem('lsUserList', JSON.stringify(listUsers));
     }
 
   }
