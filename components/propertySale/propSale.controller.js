@@ -23,24 +23,6 @@
       propCtrl.ownedby = pProperty.ownedby;
     }
 
-    propCtrl.save = function(pProperty) {
-      var newEvent = {
-        name: propCtrl.name,
-        id: propCtrl.id,
-        role: 'property',
-        price: propCtrl.price,
-        price: '1000'
-      };
-      var validation = propService.check(newEvent);
-
-      if (validation === false) {
-        propService.setProperties(newEvent);
-      };
-      init();
-      clean();
-    };
-
-
     function clean() {
       propCtrl.user = '';
       propCtrl.property = '';
