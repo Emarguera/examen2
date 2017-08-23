@@ -1,6 +1,6 @@
 (function() {
   angular
-    .module('FCT-app')
+    .module('myApp')
     .service('ImageService', ImageService);
 
   function ImageService($http) {

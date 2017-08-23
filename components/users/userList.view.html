@@ -1,0 +1,29 @@
+<section ng-controller="userController as ctrl">
+  <div class="form-group has-feedback">
+    <label for="Buscar" class="sr-only">Buscar</label>
+    <input type="text" class="form-control" name="nameFilter" ng-model="ctrl.nameFilter" placeholder="Buscar...">
+    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+  </div>
+
+  <div class="pricing-table row-eq-height" ng-repeat="players in ctrl.players | filter:ctrl.nameFilter">
+    <div class="pricing-option">
+      <h3>Nombre: {{players.name}}</h3>
+      <h4>Alias: {{players.alias}}</h4>
+      <hr />
+      <p>Presupuesto: {{players.money}}</p>
+      <p>Propiedades: {{players.property}}</p>
+      <hr />
+      <div class="price">
+        <div class="front">
+          <span class="price">{{properties.housecost}} <b>$</b></span>
+        </div>
+        <div class="back">
+          <a class="button">ID {{properties.id}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+
+  <img id="image" ng-src="{{players.photo}}">
+</section>
