@@ -16,7 +16,7 @@
     init();
     ctrl.Save = function(pimage){
       var newPlayer = {
-        code: ctrl.code,
+        playerID: ctrl.playerID,
         name: ctrl.name,
         alias: ctrl.alias,
         money: 1000,
@@ -79,7 +79,7 @@
     }
 
     function clear(){
-      ctrl.code = "";
+      ctrl.playerID = "";
       ctrl.name = "";
       ctrl.alias = "";
     }
