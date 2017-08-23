@@ -7,7 +7,7 @@
   function userService() {
     var players = [
       {
-        code: '001',
+        playerID: '001',
         name: 'Goku',
         alias: 'Kokkun',
         money: 1500,
@@ -16,7 +16,7 @@
       },
 
       {
-        code: '002',
+        playerID: '002',
         name: 'Piccolo',
         alias: 'PikOREO',
         money: 1500,
@@ -25,7 +25,7 @@
       },
 
       {
-        code: '003',
+        playerID: '003',
         name: 'Logan',
         alias: 'Lovezno',
         money: 1500,
@@ -34,7 +34,7 @@
       },
 
       {
-        code: '004',
+        playerID: '004',
         name: 'Bomberman',
         alias: 'Don Pepe y los Globos',
         money: 1500,
@@ -339,7 +339,7 @@
       var list = _getUsers();
       var validate = false
       for(var i = 0; i < list.length; i++){
-        if (pnewPlayer.code == list[i].code) {
+        if (pnewPlayer.playerID == list[i].playerID) {
           validate = true;
         }
       }
