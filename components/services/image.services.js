@@ -1,14 +1,14 @@
 (function() {
   angular
-    .module('FCT-app')
+    .module('myApp')
     .service('ImageService', ImageService);
 
   function ImageService($http) {
 
     var cloudObj = {
-      url: 'https://api.cloudinary.com/v1_1/blue-devs/image/upload',
+      url: 'https://api.cloudinary.com/v1_1/emarguera/image/upload',
       data: {
-        upload_preset: 'ngextxca',
+        upload_preset: 'hiylx2u4',
         tags: 'Any',
         context: 'photo=test'
       }
