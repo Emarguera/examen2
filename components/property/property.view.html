@@ -1,28 +1,31 @@
 <section ng-controller="userController as ctrl" class="col-lg-12">
-		<div class="wizard-header">
-		   <h4 class="info-text text-center">Comprar propiedad</h4>
-		</div>
+	<br>
+	<h4 class="info-text text-center">Comprar propiedad</h4>
+
 	<form name="RegProperty" novalidate autocomplete="off">
 		<div class="row">
-          <div class="col-sm-6">
-            <div class="form-group label-floating">
-              <label class="control-label">Jugador</label>
-              <select  class="form-control" ng-model="ctrl.player" required>
+			<br>
+			<div class="container-fluid">
+				<div class="col-sm-4 col-sm-offset-4">
+					<div class="form-group label-floating">
+						<label class="control-label">Jugador</label>
+						<select class="form-control" ng-model="ctrl.player" required>
                 <option  disabled="" selected=""></option>
                 <option ng-repeat="players in ctrl.players track by $index" value="{{players.name}}">{{players.name}}</option>
                </select>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="form-group label-floating">
-              <label class="control-label">Propiedad</label>
-              <select  class="form-control" ng-model="ctrl.property" required>
+					</div>
+
+					<div class="form-group label-floating">
+						<label class="control-label">Propiedad</label>
+						<select class="form-control" ng-model="ctrl.property" required>
                 <option  disabled="" selected=""></option>
                 <option ng-repeat="properties in ctrl.propertys" value="{{properties.name}}">{{properties.name}}</option>
                </select>
-            </div>
-          </div>
-        </div>
-		<button class="btn btn-default pull-right" ng-click="ctrl.save2()" ng-disabled="RegProperty.$invalid">Comprar</button>
+					</div>
+				</div>
+				<button class="btn btn-default" ng-click="ctrl.save2()" ng-disabled="RegProperty.$invalid">Comprar</button>
+
+			</div>
+		</div>
 	</form>
 </section>
