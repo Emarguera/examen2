@@ -352,6 +352,7 @@
         if (pBuy.player === list[i].name) {
           var info = list[i];
           var newPlayer = {
+            _id: info._id,
             id: info.id,
             name: info.name,
             alias: info.alias,
@@ -359,11 +360,15 @@
             photo: info.photo,
             property: info.property
           }
-          newPlayer.property.push(pBuy.property)
-          list[i] = newPlayer;
+          // newPlayer.property.push(pBuy.property)
+          // list[i] = newPlayer;
         }
       }
-      localStorage.setItem('lsPlayers', JSON.stringify(list));
+      modificarUser(newPlayer);
+    }
+
+    function modificarUser(pobjUser) {
+    return $http.put('http://localhost:3000/api/update_user',pobjUser);
     }
 
     function _buy(pBuy){
@@ -380,11 +385,7 @@
     }
 
     function _getUsers() {
-      var list = JSON.parse(localStorage.getItem('lsPlayers'));
-      if (list == null) {
-        list = players;
-      }
-      return list;
+      return $http.get('http://localhost:3000/api/users');
     }
   }
 
