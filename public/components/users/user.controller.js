@@ -32,7 +32,7 @@
         property: [],
         photo: pimage
       }
-      var validate = userService.check(newPlayer);
+      var validate = userService.check(newPlayer, ctrl.players);
       if (validate == false) {
         userService.setUsers(newPlayer);
         init();
@@ -70,7 +70,7 @@
       }
       var validate = userService.checkProperty(newbuy);
       if (validate == false) {
-        userService.buy(newbuy);
+        userService.buy(newbuy, ctrl.players);
         init();
         clean2();
         swal(
@@ -86,6 +86,7 @@
         )
       }
     }
+
 
     function clear() {
       ctrl.playerID = "";

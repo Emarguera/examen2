@@ -4,7 +4,7 @@
     .module('myApp')
     .service('userService', userService);
 
-  function userService() {
+  function userService($http) {
     var players = [
       {
         playerID: '001',
