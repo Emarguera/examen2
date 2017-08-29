@@ -19,9 +19,13 @@
 						<label class="control-label">Nombre</label>
 						<input name="" type="text" class="form-control" required ng-model="ctrl.name">
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-12">
 						<label>Foto</label>
 						<input type="file" id="photo" ng-model="academyctrl.image">
+					</div>
+					<div class="col-md-6">
+						<label>Upload Bio</label>
+						<input type="button" value="Upload" ng-click="ctrl.showPicker()" ng-model="ctrl.bio" />
 					</div>
 				</div>
 				<button class="btn btn-default" ng-click="ctrl.preSave()" ng-disabled="RegPlayer.$invalid">Guardar</button>
@@ -31,3 +35,19 @@
 		</div>
 	</form>
 </section>
+
+<!-- <script>
+    var client = filestack.init('A8qb4mJzmSiqk1LfyXe6xz');
+</script> -->
+<!--
+<script type="text/javascript">
+const link = document.getElementById('url');
+
+client.pick({
+     accept: 'image/*',
+}).then(function(result) {
+  const fileUrl = result.filesUploaded[0].url;
+  link.href=fileUrl;
+  link.innerHTML=fileUrl;
+});
+</script> -->

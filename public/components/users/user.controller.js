@@ -9,7 +9,16 @@
     var ctrl = this;
     ctrl.cloudObj = ImageService.getConfiguration();
     loadUsers();
+    ctrl.fileURL = "";
+    var client;
 
+    ctrl.showPicker = function() {
+        client.pick({
+        }).then(function(result) {
+            console.log(JSON.stringify(result.filesUploaded))
+            ctrl.fileURL = result.filesUploaded[0].url;
+        });
+    }
 
     function loadUsers() {
       userService.getUsers().then(function(response) {
@@ -18,19 +27,22 @@
     }
 
     function init() {
+      client = filestack.init('A8qb4mJzmSiqk1LfyXe6xz');
       ctrl.players = userService.getUsers();
       ctrl.propertys = userService.getProperty();
 
     }
     init();
-    ctrl.Save = function(pimage) {
+    ctrl.Save = function(pimage, result) {
+      var fileStackUrl = ctrl.fileURL;
       var newPlayer = {
         playerID: ctrl.playerID,
         name: ctrl.name,
         alias: ctrl.alias,
         money: 1000,
         property: [],
-        photo: pimage
+        photo: pimage,
+        bio: fileStackUrl
       }
       var validate = userService.check(newPlayer, ctrl.players);
       if (validate == false) {
