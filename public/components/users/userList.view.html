@@ -13,12 +13,14 @@
       <hr />
       <p>Propiedades: {{players.property}}</p>
       <hr />
+      <p>CÓDIGO: {{players.playerID}}</p>
+      <hr />
       <div class="price">
         <div class="front">
           <span class="price">Presupuesto: {{players.money}} <b>$</b></span>
         </div>
         <div class="back">
-          <a class="button">CÓDIGO {{players.playerID}}</a>
+          <a class="button" href="{{players.bio}}" target="_blank">BIO</a>
         </div>
       </div>
     </div>

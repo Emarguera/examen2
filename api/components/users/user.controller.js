@@ -8,7 +8,8 @@ module.exports.save = function(req,res){ //exporta el controlador
           alias:req.body.alias,
           money:req.body.money,
           photo:req.body.photo,
-          property:req.body.property
+          property:req.body.property,
+          bio:req.body.bio
         });
 
         newUser.save(function(err){
@@ -34,10 +35,6 @@ module.exports.remove = function(req,res){
 
 }
 module.exports.update = function(req,res){
-  // console.log(req.body.id);
-  // User.findByIdAndUpdate(req.body._id,{$set:req.body}).then(function(data){
-  //   res.json({success:true,msg:'Se ha actualizado correctamente.' + res});
-  // });
 
   User.findByIdAndUpdate(req.body._id, { $set: req.body}, function (err, user) {
     if (err){
